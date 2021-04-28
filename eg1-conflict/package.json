@@ -1,0 +1,17 @@
+{
+  "name": "eg1-conflict",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint:fix": "eslint --fix src",
+    "prettier:write": "prettier --write src",
+    "prettier:checkconfig": "eslint-config-prettier src/file.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1"
+  }
+}

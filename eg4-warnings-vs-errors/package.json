@@ -1,0 +1,13 @@
+{
+  "name": "eg3-warnings-vs-errors",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }, 
+  "scripts": {
+    "lint": "eslint src", 
+    "lint:strict": "eslint --max-warnings=0 src"
+  }
+}
