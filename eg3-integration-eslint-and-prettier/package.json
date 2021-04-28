@@ -16,6 +16,7 @@
     "prettier": "^2.2.1"
   },
   "scripts": {
+    "lint" : "eslint src", 
     "lint:fix": "eslint --fix src",
     "prettier:write": "prettier --write src",
     "prettier:checkconfig": "eslint-config-prettier src/file.js"
