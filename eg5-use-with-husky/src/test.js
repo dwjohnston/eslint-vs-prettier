@@ -1,4 +1,3 @@
-const foo = "aaa"; 
+const foo = "aaa";
 
-
-   console.log("hello");
+console.log("hello");
