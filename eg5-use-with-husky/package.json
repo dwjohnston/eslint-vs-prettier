@@ -17,8 +17,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "if [ $FOO_BAR_USE_HUSKY_PREPUSH = true ];  then  echo '\n\n ⛱️  running lint before push...\n\n' && yarn lint:strict fi;"
+      "pre-commit": "if [ $FOO_BAR_USE_HUSKY_PRECOMMIT = true ];  then  pretty-quick --staged; fi;",
+      "pre-push": "if [ $FOO_BAR_USE_HUSKY_PREPUSH = true ];  then  echo '\n\n ⛱️  running lint before push...\n\n' && yarn lint:strict; fi;"
     }
   }
 }
