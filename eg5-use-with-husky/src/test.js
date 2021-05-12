@@ -1,4 +1,4 @@
 const foo = "aaa"; 
 
-    foo = "bar"; 
 
+   console.log("hello");

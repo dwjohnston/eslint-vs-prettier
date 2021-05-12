@@ -51,7 +51,7 @@ We get a warning about which rules conflict.
 
 It's quite common for configs to extend a precanned set of eslint guidelines. 
 
-## Example 2 - Extending airbnb base. 
+### Example 2 - Extending airbnb base. 
 
 
 Pretty straight forward. 
@@ -59,7 +59,7 @@ Pretty straight forward.
 What I don't like about extending airbnb specifically: 
 
 - All rules are error.
-(Find relevant link).  
+    - This question asks about dealing with this: https://stackoverflow.com/questions/46517832/how-to-extend-airbnb-eslint-but-with-warnings-instead-of-errors, but there isn't really a nice solution. 
 - I don't like all the rules. 
 
 IMO: 
@@ -70,7 +70,7 @@ IMO:
 
 
 
-## Example 4 - Integrating ESLint and Prettier 
+## Example 3 - Integrating ESLint and Prettier 
 
 There are two tools/configurations you will often seen when using both ESLint and Prettier. 
 
@@ -87,12 +87,11 @@ You can also add `prettier/prettier` to the rules. This treat your prettier rule
 This isn't neccesary, and IMO is just distracting. It gives yellow warnings for white space stuff - I would rather leave that for a husky hook. (More on that later). 
 
 
-https://github.com/airbnb/javascript#whitespace
 
 
 
 
-## Example 5 - Warnings vs Errors, 
+## Example 4 - Warnings vs Errors, 
 
 I think the distinction is great!
 
@@ -109,6 +108,37 @@ For me - ok it ignore yellow errors for now -  but you should be dealing with re
 Can still enforce warnings with --max-warnings. 
 
 
+## Example 5 - Use with Husky. 
+
+Husky is just a a convenient wrapper around git hooks. 
+
+Git hooks are used to run arbitrary commands on the developers computer, typically precommit or prepush. 
+
+Common use cases are: 
+
+- Code formatting (pre commit) 
+- Running tests (pre push) 
+
+## Why use them? 
+
+- Convenience/Speed. It sucks to push your changes and then find out an hour later it's failed on a lint or formatting error. 
+
+### Some things to note: 
+
+- Hooks might not run if you are using a non-terminal git client (eg sourcetree or VSCode)
+    - Source tree solution?: https://jira.atlassian.com/browse/SRCTREE-7184?error=login_required&error_description=Login+required&state=e6f04868-439f-41c7-ae95-ea622aa29ae0 
+    - Solution is mostly to open sourcetree via command line. 
+- Husky hooks can always be skipped with `--no-verify` 
+- So don't rely on git hooks to maintain code formatting etc - make sure you are running those in your CI pipeline as well. 
+- Yes VSCode can be configured to format on save. But not everyone uses VSCode or has the same VSCode config. 
+
+
+### Opting in to using husky. 
+
+- Husky will look for a `.huskyrc` file in your home (`~`) directory. 
+- We can use this to set flags about wheter to use husky or not. 
+
+### - See example 5. 
 
 
 

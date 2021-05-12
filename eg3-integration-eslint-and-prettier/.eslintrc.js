@@ -4,8 +4,8 @@ module.exports = {
         es2021: true,
     },
 
-    extends: ['airbnb-base', 'prettier'],
-    //  extends: ['airbnb-base'],
+    //extends: ['airbnb-base', 'prettier'],
+      extends: ['airbnb-base'],
 
     plugins: ['prettier'],
 
@@ -14,7 +14,7 @@ module.exports = {
         sourceType: 'module',
     },
     rules: {
-        'prettier/prettier': 'warn',
-        // 'prettier/prettier': 'off',
+        //'prettier/prettier': 'warn',
+         'prettier/prettier': 'off',
     },
 };
