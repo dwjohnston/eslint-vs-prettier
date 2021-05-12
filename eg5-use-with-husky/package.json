@@ -5,20 +5,19 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.25.0",
-    "husky": "^6.0.0",
+    "husky": "^4.3.8",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0"
   },
-
   "scripts": {
-    "format:check": "prettier --check src", 
-    "format:write": "prettier --write src", 
-    "lint": "eslint src", 
+    "format:check": "prettier --check src",
+    "format:write": "prettier --write src",
+    "lint": "eslint src",
     "lint:strict": "eslint --max-warnings=0 src"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "if [ $FOO_BAR_USE_HUSKY_PRECOMMIT = true ];  then  pretty-quick --staged; fi;",
+      "pre-commit": "pretty-quick --staged",
       "pre-push": "if [ $FOO_BAR_USE_HUSKY_PREPUSH = true ];  then  echo '\n\n ⛱️  running lint before push...\n\n' && yarn lint:strict fi;"
     }
   }
